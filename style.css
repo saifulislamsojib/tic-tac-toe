@@ -30,19 +30,19 @@ body{
 .circle{
     margin:auto;
     margin-top: 5px;
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border: 8px solid black;
     border-radius: 50%;
 }
 .cross{
     position: relative;
-    width:125px;
+    width:105px;
     margin:auto;
 }
 .cross-1, .cross-2{
     background-color:black;
-    width:125px;
+    width:105px;
     height: 8px;
     position:absolute;
     top:65px;
