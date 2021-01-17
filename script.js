@@ -36,6 +36,7 @@ const boxes = document.getElementsByClassName('box');
         xPlayer.classList.remove("disabled");
         xPlayer.removeAttribute('disabled');
         isTrue = true;
+        box.style.cursor = 'pointer';
     })
 })
 function game(box) {
