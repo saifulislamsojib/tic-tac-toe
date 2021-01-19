@@ -20,6 +20,10 @@ h1{
     font-size:35px;
     margin-bottom: 15px;
 }
+h2{
+    margin-bottom: 10px;
+    font-size:30px;
+}
 h3{
     margin-bottom: 10px;
 }
@@ -90,4 +94,17 @@ button:hover{
 }
 .cross-2{
     transform: rotate(-45deg);
+}
+.game-over{
+    display: none;
+}
+.game-over h3{
+    font-size:23px;
+}
+.game-section{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 390px;
+    text-align: center;
 }
