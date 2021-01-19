@@ -63,7 +63,7 @@ function game(box, i) {
             isTrue = false;
             xPlayer.setAttribute('disabled', '');
             xPlayer.classList.add("disabled");
-            gameWin(i, oWin, 'o');
+            gameWin(i, oWin, 'O');
         }
         else {
             box.innerHTML = `<div class="cross">
@@ -75,7 +75,7 @@ function game(box, i) {
             isTrue = true;
             oPlayer.setAttribute('disabled', '');
             oPlayer.classList.add("disabled");
-            gameWin(i, xWin, 'x');
+            gameWin(i, xWin, 'X');
         }
     }
 }
