@@ -28,7 +28,6 @@ const boxes = document.getElementsByClassName('box');
 [...boxes].map((box, i) => {
     box.addEventListener('click', () => {
         game(box, i);
-        draw.push(i);
         box.style.cursor = 'not-allowed';
     })
     resetBtn(box);
@@ -104,18 +103,21 @@ function gameWin(i, Win, p) {
     if (i == 2 || i == 4 || i == 6) {
         Win[7].push(i);
     }
-    Win.map(win => {
-        if (win.length == 3) {
+    draw.push(i);
+    if (Win[0].length == 3 || Win[1].length == 3 || Win[2].length == 3 || Win[3].length == 3 || Win[4].length == 3 || Win[5].length == 3 || Win[6].length == 3 || Win[7].length == 3) {
+        setTimeout(() => {
             Boxes.style.display = 'none';
             gameOver.style.display = 'block';
             winner.innerText = `${p}' Win`;
-        }
-        else {
-            if (draw.length == 8) {
+        }, 100);
+    }
+    else {
+        if (draw.length == 9) {
+            setTimeout(() => {
                 Boxes.style.display = 'none';
                 gameOver.style.display = 'block';
                 winner.innerText = 'Game Draw';
-            }
+            }, 100);
         }
-    })
+    }
 }
