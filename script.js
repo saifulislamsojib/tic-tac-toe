@@ -1,4 +1,5 @@
 let isTrue = true;
+let isWin = false;
 const xPlayer = document.getElementById('x-player');
 const oPlayer = document.getElementById('o-player');
 const reset = document.getElementById('reset');
@@ -41,6 +42,7 @@ function resetBtn(box) {
         xPlayer.classList.remove("disabled");
         xPlayer.removeAttribute('disabled');
         isTrue = true;
+        isWin = false;
         box.style.cursor = 'pointer';
         gameOver.style.display = 'none';
         Boxes.style.display = 'grid';
@@ -55,7 +57,7 @@ function resetBtn(box) {
 }
 
 function game(box, i) {
-    if (!box.innerHTML) {
+    if (!box.innerHTML && isWin === false) {
         if (isTrue) {
             box.innerHTML = `<div class='circle'>
                             </div>`;
@@ -105,19 +107,20 @@ function gameWin(i, Win, p) {
     }
     draw.push(i);
     if (Win[0].length == 3 || Win[1].length == 3 || Win[2].length == 3 || Win[3].length == 3 || Win[4].length == 3 || Win[5].length == 3 || Win[6].length == 3 || Win[7].length == 3) {
+        isWin = true;
         setTimeout(() => {
             Boxes.style.display = 'none';
             gameOver.style.display = 'block';
-            winner.innerText = `${p}' Win`;
-        }, 100);
+            winner.innerText = `${p}' Win!`;
+        }, 110);
     }
     else {
         if (draw.length == 9) {
             setTimeout(() => {
                 Boxes.style.display = 'none';
                 gameOver.style.display = 'block';
-                winner.innerText = 'Game Draw';
-            }, 100);
+                winner.innerText = 'Game Draw!';
+            }, 110);
         }
     }
 }
